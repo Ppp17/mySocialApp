@@ -1,4 +1,4 @@
-@import '../../style.scss';
+@import "../../style.scss";
 .navBar {
   @include themify($themes) {
     display: flex;
@@ -6,11 +6,12 @@
     justify-content: space-between;
     padding: 10px 20px;
     height: 50px;
-    border-bottom: 1px solid themed('border');
+    border-bottom: 1px solid themed("border");
     position: sticky;
     top: 0;
-    background-color: themed('bg');
-    color: themed('textColor');
+    background-color: themed("bg");
+    color: themed("textColor");
+    z-index: 999;
     .left {
       display: flex;
       align-items: center;
@@ -18,13 +19,13 @@
       span {
         font-weight: bold;
         font-size: 20px;
-        color: themed('logo');
+        color: themed("logo");
       }
       .search {
         display: flex;
         align-items: center;
         gap: 10px;
-        border: 1px solid themed('border');
+        border: 1px solid themed("border");
         border-radius: 5px;
         padding: 5px;
         input {
@@ -33,7 +34,7 @@
           // width: 30vw;
           min-width: 500px;
           background-color: transparent;
-          color: themed('textColor');
+          color: themed("textColor");
         }
       }
     }
