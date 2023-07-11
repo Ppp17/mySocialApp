@@ -32,9 +32,15 @@
           border: none;
           outline: none;
           // width: 30vw;
-          min-width: 500px;
+          width: 500px;
           background-color: transparent;
           color: themed("textColor");
+          @include mobile {
+            display: none;
+          }
+          @include tablet {
+            width: 200px;
+          }
         }
       }
     }
@@ -43,6 +49,9 @@
       align-items: center;
       gap: 10px;
       font-weight: 500;
+      @include mobile {
+        display: none;
+      }
       .user {
         display: flex;
         align-items: center;

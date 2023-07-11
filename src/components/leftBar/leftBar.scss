@@ -1,4 +1,4 @@
-@import '../../style.scss';
+@import "../../style.scss";
 
 .leftBar {
   @include themify($themes) {
@@ -14,15 +14,19 @@
     &::-webkit-scrollbar {
       display: none;
     }
-    background-color: themed('bg');
-    color: themed('textColor');
+
+    @include mobile {
+      display: none;
+    }
+    background-color: themed("bg");
+    color: themed("textColor");
     .container {
       padding: 20px;
       hr {
         margin: 20px 0;
         border: none;
         height: 0.5px;
-        background-color: themed('border');
+        background-color: themed("border");
       }
       .menu {
         display: flex;

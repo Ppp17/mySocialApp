@@ -8,10 +8,17 @@
     // 总高度减去空出来的70px
     height: calc(100vh - 70px);
     overflow: scroll;
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: none;
+    }
     // 隐藏滚动条
     &::-webkit-scrollbar {
       display: none;
     }
+
     background-color: themed("bgSoft");
     .container {
       padding: 20px;
