@@ -38,7 +38,6 @@ $themes: (
 @function themed($key) {
   @return map-get($theme-map, $key);
 }
-
 @mixin mobile {
   @media (max-width: 480px) {
     @content;
@@ -46,7 +45,7 @@ $themes: (
 }
 
 @mixin tablet {
-  @media (max-width: 960px) {
+  @media (min-width: 480px) and (max-width: 960px) {
     @content;
   }
 }
