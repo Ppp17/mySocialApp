@@ -1,5 +1,7 @@
 import "./posts.scss";
 import Post from "../post/Post";
+import { useQuery } from "@tanstack/react-query";
+import { makeRequest } from "../../axios";
 function Posts() {
   // mock数据
   const posts = [
@@ -21,11 +23,19 @@ function Posts() {
       desc: "Tenetur iste voluptates dolorem rem commodi voluptate pariatur, voluptatum, laboriosam consequatur enim nostrum cumque! Maiores a nam non adipisci minima modi tempore.",
     },
   ];
+
+  const { isLoading, error, data } = useQuery(["post"], async () => {
+    const res = await makeRequest.get("/posts");
+    return res.data;
+  });
+  console.log(data);
   return (
     <div className="posts">
-      {posts.map((post) => (
-        <Post post={post} key={post.id} />
-      ))}
+      {error
+        ? "Something went wrong"
+        : isLoading
+        ? "loading"
+        : data.map((post) => <Post post={post} key={post.id} />)}
     </div>
   );
 }
